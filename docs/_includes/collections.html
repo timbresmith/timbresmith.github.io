@@ -1,0 +1,12 @@
+{% if items %}
+<ul class="items">
+  {% for item in items %}
+  <li class="item">
+    <h3 class="item-name">
+      <a class="item-url" href="{{ item.url }}">{{ item.name }}</a>
+    </h3>
+    <p class="item-description">{{ item.description | markdownify }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

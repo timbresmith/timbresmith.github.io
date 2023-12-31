@@ -9,3 +9,11 @@ defaults:
       layout: "default"
 
 title: The Timbresmith's Shop
+description: Building muscial instruments out of wood
+
+collections_dir: collections
+collections:
+  projects:
+    output: true
+  techniques:
+    output: true

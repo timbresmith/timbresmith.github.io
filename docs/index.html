@@ -1,4 +1,10 @@
 ---
-title: Home
+title: The Timbresmith's Shop
 ---
-<h1>{{ "Hello World!" | downcase }}</h1>
+<h2><a href="/projects/">Projects</a></h2>
+{% assign items=site.projects %}
+{% include collections.html %}
+
+<h2><a href="/techniques/">Techniques</a></h2>
+{% assign items=site.techniques %}
+{% include collections.html %}
