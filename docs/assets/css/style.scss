@@ -1,3 +1,104 @@
 ---
 ---
 @import "{{ site.theme }}";
+
+$river_item_height: 145px;
+
+.ts-river {
+  padding: 0;
+  list-style-type: none;
+}
+
+.ts-river-item {
+  display: flow-root;
+  min-height: $river_item_height;
+  margin: 0 0 20px 0;
+}
+
+.ts-river-item:last-child {
+  margin: 0;
+}
+
+.ts-river-item-image {
+  display: block;
+  position: static;
+  float: left;
+  width: 200px;
+  height: $river_item_height;
+  margin: 0 20px 0 0;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  filter: drop-shadow(#ccc 5px 5px 5px);
+}
+
+.ts-river-item-name {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.ts-nav-item .buttons {
+  background: none;
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 0px 10px 0px 10px;
+}
+
+.ts-more-link:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.25em;
+  border-top: 0.25em solid transparent;
+  border-bottom: 0.25em solid transparent;
+  border-left: 0.25em solid #c30000;
+}
+
+@media print, screen and (min-width: 961px) {
+  .ts-header {
+    width: 220px;
+    padding-left: 25px;
+    margin-right: 0px;
+  }
+}
+
+@media print, screen and (max-width: 960px) and (min-width: 721px) {
+  $nav_width: 197px;
+  $header_top_padding: 34px;
+  $header_bottom_padding: 22px;
+  $li_outer_height: 41px;
+  $li_bottom_margin: 12px;
+
+  .ts-header {
+    position: relative;
+    padding-right: $nav_width;
+    min-height: calc(
+      (({{ site.data.navigation.size }} * #{$li_outer_height}) - #{$li_bottom_margin})
+      + #{$header_top_padding}
+      - #{$header_bottom_padding}
+    );
+  }
+
+  .ts-nav {
+    position: absolute;
+    top: $header_top_padding;
+    right: 50px;
+  }
+}
+
+@media print, screen and (max-width: 960px) and (max-width: 480px) {
+
+   $river_item_height: 70px;
+
+  .ts-river-item {
+    min-height: $river_item_height;
+  }
+
+  .ts-river-item-image {
+    width: 100px;
+    height: $river_item_height;
+  }
+}

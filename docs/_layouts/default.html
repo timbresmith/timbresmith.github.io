@@ -22,9 +22,18 @@
 
   <body>
     <div class="wrapper">
-      <header>
+      <header class="ts-header">
         <h1 class="header">{{ site.title }}</h1>
         <p class="header">{{ site.description }}</p>
+        <nav>
+          <ul class="ts-nav">
+            {% for link in site.data.navigation %}
+            <li class="ts-nav-item">
+              <a class="buttons" href="{{ link.link }}">{{ link.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
       </header>
       <section>
         {{ content }}
