@@ -1,4 +1,4 @@
-{% if items %}
+{% if items and items_limit > 0 %}
 <ul class="ts-river">
   {% for item in items limit:items_limit %}
   <li class="ts-river-item">
@@ -23,4 +23,6 @@
   </li>
   {% endfor %}
 </ul>
+{% else %}
+<p>Coming soon!</p>
 {% endif %}
