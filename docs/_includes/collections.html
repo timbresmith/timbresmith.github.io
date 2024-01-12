@@ -1,0 +1,28 @@
+{% if items and items_limit > 0 %}
+<ul class="ts-river">
+  {% for item in items limit:items_limit %}
+  <li class="ts-river-item">
+    {% if item.image or item.image_alt %}
+      <img 
+        class="ts-river-item-image"
+      {% if item.image %}
+        src="{{ item.image }}"
+      {% else %}
+        src="/"
+      {% endif %}
+        {% if item.image_alt %}
+        alt="{{ item.image_alt }}"
+        {% endif %}
+      />
+    {% endif %}
+
+    <h3 class="ts-river-item-name">
+      <a class="ts-river-item-link" href="{{ item.url }}">{{ item.name }}</a>
+    </h3>
+    <p class="ts-river-item-description">{{ item.description }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Coming soon!</p>
+{% endif %}
